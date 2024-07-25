@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'base.css' %}"
+
+<div class="div-container">
+    <div class="heading-div">
+        <h1>Blog</h1>
+    </div>
+    
+
+    {% for post in posts reversed %}
+    <div class="sub-container"><a href="/post/{{post.id}}" style="text-decoration: none; color: black" >
+        <h2>{{post.title}}</h2>
+        <p>{{post.created_at}}</p>
+        <h4>{{post.description|truncatewords:20}}</h4>
+    </a>
+        
+    </div>
+    {% endfor %}
+
+
+</div>
+    
+   
